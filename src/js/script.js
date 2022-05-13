@@ -32,6 +32,7 @@ async function criaListagemPosts(pagina) {
         divMensagem.append(h4, p)
         const divPrivada = document.createElement('div');
         divPrivada.id = 'divPrivada';
+        divPrivada.classList.add(`${post.id}`)
 
         if (li.id == localStorage.getItem("Username")) {
             const input = document.createElement('input');
@@ -69,7 +70,7 @@ function criaButtonExcluir() {
 async function editarPost(e) {
     e.preventDefault();
     const user = e.target.parentNode.className;
-    await Api.editarPost(user, {newContent: e.target.parentNode.childNodes[3].value});
+    await Api.editarPost(user, {newContent: e.target.parentNode.childNodes[0].value});
     ulPosts.innerHTML = '';
     criaListagemPosts(1);
     window.scrollTo(0, 0);
@@ -127,5 +128,5 @@ function deslogar(e) {
     e.preventDefault();
     localStorage.clear();
     paginaPost = 1;
-    window.location.href = 'http://127.0.0.1:5500/pages/index.html';
+    window.location.href = 'http://127.0.0.1:5500/index.html';
 }
