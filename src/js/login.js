@@ -12,6 +12,6 @@ async function logarUsuario(e) {
     })
     
     await Api.loginUsuario(usuario);
-    window.location.href = 'http://127.0.0.1:5500/pages/index.html';
+    window.location.href = 'http://127.0.0.1:5500/pages/blog.html';
 }
 
