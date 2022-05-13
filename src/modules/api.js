@@ -30,7 +30,7 @@ class Api {
         if (response.token) {
         localStorage.setItem("Id User", response.userId)
         localStorage.setItem("Token", response.token)
-        window.location = 'http://127.0.0.1:5500/pages/index.html';
+        window.location = 'http://127.0.0.1:5500/pages/blog.html';
         }
         return response;
     }
