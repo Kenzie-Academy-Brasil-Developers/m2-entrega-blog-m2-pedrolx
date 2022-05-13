@@ -4,31 +4,35 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../src/styles/reset.css">
+    <link rel="stylesheet" href="../src/styles/style.css">
     <title>Blog</title>
 </head>
-<body>
+<body id="bodyBlog">
 
-    <header>
-        
-    <h1>Kenzie Blog</h1>
-    <ul>
-        <li><a href="">Sair</a></li>
+    <header id="headerBlog">
+
+    <ul id="infoUsuario">
+        <li><img src="" alt="avatar"></li>
+        <li></li>
+    </ul>
+    
+    <ul class="ulBotaoSair">
+        <li id="botaoSair"><button href="">Logout</a></li>
     </ul>
 
     </header>
 
     <main>
+        <form id="criaPosts">
+            <input type="text" placeholder="Seu Post" name="post" id="contentPost">
+            <button type="submit">+</button>
+        </form>
 
-        <section id="criaPosts">
+        <ul id="listagemPosts"></ul>
 
-            <h4>Que tal postar algo hoje?</h4>
-            <input type="text" placeholder="Dê um nome ao seu Post" name="titulo" id="titulo">
-            <input type="text" placeholder="Introdução rápida ao assunto." name="subtitulo" id="subtitulo">
-            <input type="text" placeholder="Seu Post" name="post" id="post">
+        <footer id="rodapé-blog"></footer>
 
-        </section>
-
-        <section id="posts"></section>
 
     </main>
     

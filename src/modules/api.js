@@ -12,7 +12,7 @@ class Api {
         })
         .then(res => res.json())
         .then(res => res)
-        .catch(err => console.error(err))
+        .catch(err => err)
         return response;
     }
 
@@ -26,15 +26,17 @@ class Api {
         })
         .then(res => res.json())
         .then(res => res)
-        .catch(err => console.error(err))
-        Api.token = response.token;
+        .catch(err => err)
+        if (response.token) {
+        localStorage.setItem("Id User", response.userId)
         localStorage.setItem("Token", response.token)
         window.location = 'http://127.0.0.1:5500/pages/index.html';
+        }
         return response;
     }
 
-    static async listarUsuarios() {
-        const response = await fetch('https://api-blog-m2.herokuapp.com/user/86e1a659-fc49-4c5e-b2e4-ee286e4c901f', {
+    static async listarUsuarios(id) {
+        const response = await fetch(`https://api-blog-m2.herokuapp.com/user/${id}`, {
             method: 'GET',
             headers: {
                 'Content-Type': 'application/json',
@@ -43,26 +45,27 @@ class Api {
         })
         .then(res => res.json())
         .then(res => res)
-        .catch(err => console.error(err))
+        .catch(err => err)
         return response;
     }
 
     static async criaPosts(content) {
-        const response = await fetch('https://api-blog-m2.herokuapp.com/user/86e1a659-fc49-4c5e-b2e4-ee286e4c901f', {
+        const response = await fetch(`https://api-blog-m2.herokuapp.com/post`, {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json',
                 'Authorization': `Bearer ${localStorage.getItem("Token")}`
             },
+            body: JSON.stringify(content),
         })
         .then(res => res.json())
         .then(res => res)
-        .catch(err => console.error(err))
+        .catch(err => err)
         return response;
     }
 
-    static async listarPosts() {
-        const response = await fetch('https://api-blog-m2.herokuapp.com/post/9cc3c5e3-83df-4201-b1f3-87efae81fa96', {
+    static async listarPosts(pagina) {
+        const response = await fetch(`https://api-blog-m2.herokuapp.com/post?page=${pagina}`, {
             method: 'GET',
             headers: {
                 'Content-Type': 'application/json',
@@ -71,9 +74,39 @@ class Api {
         })
         .then(res => res.json())
         .then(res => res)
-        .catch(err => console.error(err))
+        .catch(err => err)
         return response;
     }
+
+    static async editarPost(id, newContent) {
+        const response = await fetch(`https://api-blog-m2.herokuapp.com/post/${id}`, {
+            method: 'PATCH',
+            headers: {
+                'Content-Type': 'application/json',
+                'Authorization': `Bearer ${localStorage.getItem("Token")}`
+            },
+            body: JSON.stringify(newContent)
+        })
+        .then(res => res.json())
+        .then(res => res)
+        .catch(err => err)
+        return response;
+    }
+
+    static async deletarPost(id) {
+        const response = await fetch(`https://api-blog-m2.herokuapp.com/post/${id}`, {
+            method: 'DELETE',
+            headers: {
+                'Content-Type': 'application/json',
+                'Authorization': `Bearer ${localStorage.getItem("Token")}`
+            },
+        })
+        .then(res => res.json())
+        .then(res => res)
+        .catch(err => err)
+        return response;
+    }
+
 }
 
 export { Api }

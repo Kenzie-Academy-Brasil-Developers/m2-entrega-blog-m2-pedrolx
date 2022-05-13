@@ -1,0 +1,172 @@
+img {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+}
+
+a {
+    color: #6495ED;
+    text-decoration: none;
+}
+
+body {
+    background-color: #6495ED;
+    color: #fff;
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+}
+
+#headerBlog {
+    color: #fff;
+}
+
+#bodyBlog {
+    background-color: #fff;
+    color: black;
+}
+
+#navegação {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    font-size: 18px;
+    background-color: #fff;
+    font-weight: 500;
+    padding: 10px;
+}
+
+#infoUsuario {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: center;
+    font-size: 18px;
+    background-color: #6495ED;
+    font-weight: 500;
+    padding: 7px;
+    gap: 10px;
+    font-weight: 700;
+    font-size: 25px;
+}
+
+.ulBotaoSair {
+    position: absolute;
+    left: 80%;
+    top: -2%;
+}
+
+#criaPosts {
+    background-color: #fff;
+    width: 300px;
+    margin: 0 auto;
+    border-radius: 5px;
+    box-shadow: 4px 4px gray;
+    margin-top: 30px;
+    margin-bottom: 40px;
+    width: 50%;
+}
+
+#criaPosts > input {
+    width: 95%;
+}
+
+#criaPosts > button {
+    width: 6%;
+    margin: 0 0 5px 590px;
+}
+
+#titulo-cadastro {
+    margin: 100px 0 0 0;
+    font-size: 35px;
+    font-weight: 700;
+    cursor: default;
+}
+
+#form-cadastro {
+    width: 300px;
+    text-align: center;
+    margin: 0 auto;
+}
+
+#listagemPosts > li {
+    text-align: justify;
+    background-color: #fff;
+    width: 300px;
+    margin: 0 auto;
+    border-radius: 5px;
+    box-shadow: 4px 4px gray;
+    margin-top: 30px;
+    margin-bottom: 40px;
+    width: 50%;
+    display: flex;
+    flex-direction: row;
+    gap: 20px;
+}
+
+#listagemPosts > li > div > img {
+    margin: 3px 3px 3px 3px;
+}
+
+#listagemPosts > li > div > h4 {
+    font-size: 18px;
+    font-weight: 600;
+}
+
+button {
+    margin: 30px 0 0 0;
+    font-size: 15px;
+    background-color: #EDBC64;
+    border: none;
+    border-radius: 5px;
+    color: #fff;
+    width: 200px;
+    height: 2rem;
+}
+
+button:hover {
+    cursor: pointer;
+}
+
+input {
+    margin: 15px 0 0 0;
+    font-size: 15px;
+    border: none;
+    background-color: #fff;
+    width: 200px;
+    height: 2rem;
+    border-radius: 5px;
+    text-align: center;
+}
+
+#rodapé-blog {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.paginaAtual {
+    width: 50px;
+    font-size: 25px;
+    font-weight: 700;
+}
+
+#divPrivada {
+    display: flex;
+    flex-direction: column;
+}
+
+#div-privada > span {
+}
+
+#divPrivada > input {
+}
+
+#divPrivada > #Editar {
+    background-color: #fff;
+    color: #6495ED;
+}
+
+#divPrivada > #Excluir {
+    background-color: #fff;
+    color: rgb(211, 125, 125);
+}
