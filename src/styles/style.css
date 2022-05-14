@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@100;400;600;700&display=swap');
+
 img {
     width: 50px;
     height: 50px;
@@ -15,6 +17,7 @@ body {
     display: flex;
     flex-direction: column;
     text-align: center;
+    font-family: 'Montserrat', sans-serif;
 }
 
 #headerBlog {
@@ -155,12 +158,6 @@ input {
     flex-direction: column;
 }
 
-#div-privada > span {
-}
-
-#divPrivada > input {
-}
-
 #divPrivada > #Editar {
     background-color: #fff;
     color: #6495ED;
@@ -169,4 +166,24 @@ input {
 #divPrivada > #Excluir {
     background-color: #fff;
     color: rgb(211, 125, 125);
+}
+
+#listagemPosts > li {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    padding: 5px;
+}
+
+#listagemPosts > li > #divMensagem {
+    width: 50%;
+}
+
+
+#listagemPosts > li > #divPrivada > span {
+    margin: 7px 0 7px 63px;
+}
+
+#listagemPosts > li > #divPrivada > button {
+    margin:  0 0 0 0;
 }

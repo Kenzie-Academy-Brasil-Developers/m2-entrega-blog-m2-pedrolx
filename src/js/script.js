@@ -30,15 +30,18 @@ async function criaListagemPosts(pagina) {
         divAvatar.append(img);
         const divMensagem = document.createElement('div');
         divMensagem.append(h4, p)
+
         const divPrivada = document.createElement('div');
-        divPrivada.id = 'divPrivada';
+
         divPrivada.classList.add(`${post.id}`)
 
         if (li.id == localStorage.getItem("Username")) {
             const input = document.createElement('input');
-            input.placeholder = 'Edite a mensagem aqui'
+            input.placeholder = 'Edite a mensagem aqui';
             const buttonE = criaButtonEditar();
             const buttonEx = criaButtonExcluir();
+            divMensagem.id = 'divMensagem';
+            divPrivada.id = 'divPrivada';
             divPrivada.append(input, buttonE, buttonEx, data)
             li.append(divAvatar, divMensagem, divPrivada);
             section.appendChild(li);
